@@ -1,0 +1,17 @@
+public class Task8
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter the day");
+        int date = input.nextInt();
+        System.out.println("Please enter the month");
+        int month = input.nextInt();
+        System.out.println("Please enter the year");
+        int year = input.nextInt();
+        
+        Date_Task8 joss = new Date_Task8(date, month, year)
+        joss.displayDate();
+        
+    }
+}

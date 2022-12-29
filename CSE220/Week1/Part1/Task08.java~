@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Task08
+{
+  public static void main(String[] args)
+  {
+    Scanner k = new Scanner (System.in);
+    int q = k.nextInt();
+    int[] a = new int[q];
+    int[] b = new int[q];
+    int[] c = new int[q];
+    for(int i = 0; i<q; i++)
+    {
+      a[i] = k.nextInt();
+    }
+    for(int i = 0; i<q; i++)
+    {  
+      b[i] = k.nextInt();   
+    }
+    for(int i = 0; i<q; i++)
+    {
+      c[i] = 5*a[i] - b[i];
+    }
+    for(int i = 0; i < c.length; i++)
+    {
+      System.out.print(c[i]+" ");
+    }
+    System.out.println();
+  }
+}

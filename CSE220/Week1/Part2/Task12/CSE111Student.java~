@@ -1,0 +1,9 @@
+public class CSE111Student extends Student
+{ 
+    
+    public CSE111Student()
+    {
+        this.msg = "I love Java Programming";
+    }
+    
+}

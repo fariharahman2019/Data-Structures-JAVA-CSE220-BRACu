@@ -1,0 +1,10 @@
+public interface Queue
+{
+    public boolean isEmpty();
+    
+    public void enqueue(Object e) throws QueueOverflowException;
+    
+    public Object dequeue() throws QueueUnderflowException;
+    
+    public String toString(); 
+}

@@ -1,0 +1,32 @@
+public class ComplexNumber extends RealNumber
+{
+     private double ImaginaryValue;
+    public double getImagnaryValue() {
+        return ImaginaryValue;
+    }
+    public void setImaginaryValue(double r) {
+        ImaginaryValue = r;
+    }
+    public ComplexNumber()
+    {
+        setRealValue(1.0);
+        setImaginaryValue(1.0);
+    }
+    public ComplexNumber(double r, double i)
+    {
+        setRealValue(r);
+        setImaginaryValue(i);
+    }
+    public void pong() {
+        System.out.println("I'm in ComplexNumber class");
+    }
+    public void check()
+    {
+        pong();
+        ping();
+        System.out.println("Checking ended");
+    }
+     public String toString() {
+        return "ImaginrayPart: "+getImaginaryValue();
+    }
+}

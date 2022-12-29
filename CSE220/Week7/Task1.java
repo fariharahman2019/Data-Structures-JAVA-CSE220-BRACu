@@ -1,0 +1,131 @@
+package Obaed;
+
+import java.util.Scanner;
+public class Task1{
+    public static void main (String[]args){
+        Scanner k = new Scanner(System.in);
+        String a = k.nextLine();
+        int length = a.length();
+        char [] array = new char[length];
+        ArrayStack b = new ArrayStack();
+//        int selection;
+//        while(true){
+//            try{
+//                System.out.println("Please, enter:\n1 to select array based stack\n2 to select linked list based stack");
+//                selection = k.nextInt();
+//                if(selection!=1 && selection!=2)
+//                    System.err.println("Wrong Selection! Please, try Again.");
+//                else break;
+//            }
+//            catch(Exception e){
+//                System.err.println("Input Format Mismatch! Please, try Again.");
+//                k.next();
+//            }
+//        }
+//        Stack stack;
+//        if(selection==1) stack = new ArrayStack();
+//        else stack = new ListStack();
+        int j=0;
+        boolean check=true;
+        for(int i=0; i<length; i++)
+        {
+            try{
+                
+                if((a.charAt(i)=='(') )
+                {
+                    
+                    b.push(a.charAt(i));
+                    
+                }
+                else if((a.charAt(i)=='{'))
+                {
+                    
+                    b.push(a.charAt(i));
+                   
+                }
+                else if((a.charAt(i)=='[') )
+                {
+                    
+                    b.push(a.charAt(i));
+                   
+                }
+                
+                
+                else if((a.charAt(i)==')'))
+                {
+                    if(b.peek()!='(')
+                    {
+                        check= false;
+                        j=1;
+                        break;
+                    }
+                    else
+                    {
+                        char p = b.pop();
+                    }
+                }
+                else if((a.charAt(i)=='}'))
+                {
+                    if(b.peek()!='{')
+                    {
+                        check= false;
+                       j=1;
+                        break;
+                    }
+                    else
+                    {
+                        char c = b.pop();
+                    }
+                }
+                else if((a.charAt(i)==']'))
+                {
+                    if(b.peek()!=']')
+                    {
+                        check= false;
+                       j=1;
+                        break;
+                    }
+                    else
+                    {
+                        char c = b.pop();
+                    }
+                }
+                
+            }
+            
+            catch(Exception e)
+            {
+                System.err.println("Stack Error\n"+e);
+            }
+            
+        }
+
+        if(b.isEmpty()==true && !check)
+        {
+            System.out.println("This expression is correct.23423");
+        }
+        else if(b.isEmpty()==false)
+        {
+            System.out.println("This expression is NOT correct.");
+            try{
+                char y = b.peek();
+            
+            
+            if(j==0)
+            {
+                System.out.println("Error at character #"+b.search(b.peek())+". '"+y+"' - not closed");
+            }
+            if(j==1)
+             { 
+                y = a.charAt(b.search(b.peek()));
+                System.out.println("Error at character #"+b.search(b.peek())+". '"+y+"' - not opened");
+            }
+            }
+            catch(Exception e)
+            {
+                System.err.println("Stack Full\n"+e);
+            }
+        }
+
+    }
+}
